@@ -30,23 +30,26 @@ namespace ParaCafe
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.dgwOrderDetails = new System.Windows.Forms.DataGridView();
+            this.nmuProductQuantity = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cmbTableNo = new System.Windows.Forms.ComboBox();
+            this.btnMove = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btnOrderCancel = new System.Windows.Forms.Button();
+            this.btnGetPay = new System.Windows.Forms.Button();
+            this.btnBackToHome = new System.Windows.Forms.Button();
+            this.lblTableNo = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.cmbProduct = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwOrderDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmuProductQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -59,42 +62,48 @@ namespace ParaCafe
             this.label1.TabIndex = 0;
             this.label1.Text = "Ürün Adı";
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(333, 31);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 28);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "EKLE";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(333, 31);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(190, 28);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "EKLE";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgwOrderDetails
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 73);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(510, 362);
-            this.dataGridView1.TabIndex = 2;
+            this.dgwOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwOrderDetails.Location = new System.Drawing.Point(20, 73);
+            this.dgwOrderDetails.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.dgwOrderDetails.Name = "dgwOrderDetails";
+            this.dgwOrderDetails.Size = new System.Drawing.Size(510, 362);
+            this.dgwOrderDetails.TabIndex = 5;
             // 
-            // numericUpDown1
+            // nmuProductQuantity
             // 
-            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDown1.Location = new System.Drawing.Point(223, 32);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(100, 23);
-            this.numericUpDown1.TabIndex = 3;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(23, 31);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 24);
-            this.comboBox1.TabIndex = 4;
+            this.nmuProductQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nmuProductQuantity.Location = new System.Drawing.Point(223, 32);
+            this.nmuProductQuantity.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.nmuProductQuantity.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.nmuProductQuantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmuProductQuantity.Name = "nmuProductQuantity";
+            this.nmuProductQuantity.Size = new System.Drawing.Size(100, 23);
+            this.nmuProductQuantity.TabIndex = 1;
+            this.nmuProductQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label2
             // 
@@ -103,27 +112,28 @@ namespace ParaCafe
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 16);
-            this.label2.TabIndex = 5;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Adet";
             // 
-            // comboBox2
+            // cmbTableNo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(586, 28);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(122, 24);
-            this.comboBox2.TabIndex = 6;
+            this.cmbTableNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTableNo.FormattingEnabled = true;
+            this.cmbTableNo.Location = new System.Drawing.Point(586, 28);
+            this.cmbTableNo.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.cmbTableNo.Name = "cmbTableNo";
+            this.cmbTableNo.Size = new System.Drawing.Size(122, 24);
+            this.cmbTableNo.TabIndex = 3;
             // 
-            // button2
+            // btnMove
             // 
-            this.button2.Location = new System.Drawing.Point(718, 28);
-            this.button2.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 24);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "TAŞI";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnMove.Location = new System.Drawing.Point(718, 28);
+            this.btnMove.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnMove.Name = "btnMove";
+            this.btnMove.Size = new System.Drawing.Size(88, 24);
+            this.btnMove.TabIndex = 4;
+            this.btnMove.Text = "TAŞI";
+            this.btnMove.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -132,59 +142,59 @@ namespace ParaCafe
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 16);
-            this.label3.TabIndex = 8;
+            this.label3.TabIndex = 2;
             this.label3.Text = "Masa No:";
             // 
-            // button3
+            // btnOrderCancel
             // 
-            this.button3.BackColor = System.Drawing.Color.Maroon;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(553, 316);
-            this.button3.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(122, 46);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "SİPARİŞ İPTAL";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnOrderCancel.BackColor = System.Drawing.Color.Maroon;
+            this.btnOrderCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrderCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnOrderCancel.Location = new System.Drawing.Point(553, 316);
+            this.btnOrderCancel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnOrderCancel.Name = "btnOrderCancel";
+            this.btnOrderCancel.Size = new System.Drawing.Size(122, 46);
+            this.btnOrderCancel.TabIndex = 7;
+            this.btnOrderCancel.Text = "SİPARİŞ İPTAL";
+            this.btnOrderCancel.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnGetPay
             // 
-            this.button4.BackColor = System.Drawing.Color.Teal;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(685, 316);
-            this.button4.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(122, 46);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "ÖDEME AL";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnGetPay.BackColor = System.Drawing.Color.Teal;
+            this.btnGetPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGetPay.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnGetPay.Location = new System.Drawing.Point(685, 316);
+            this.btnGetPay.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnGetPay.Name = "btnGetPay";
+            this.btnGetPay.Size = new System.Drawing.Size(122, 46);
+            this.btnGetPay.TabIndex = 8;
+            this.btnGetPay.Text = "ÖDEME AL";
+            this.btnGetPay.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnBackToHome
             // 
-            this.button5.BackColor = System.Drawing.Color.Gold;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button5.Location = new System.Drawing.Point(553, 373);
-            this.button5.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(254, 46);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "ANASAYFAYA  DÖN";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnBackToHome.BackColor = System.Drawing.Color.Gold;
+            this.btnBackToHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackToHome.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnBackToHome.Location = new System.Drawing.Point(553, 373);
+            this.btnBackToHome.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnBackToHome.Name = "btnBackToHome";
+            this.btnBackToHome.Size = new System.Drawing.Size(254, 46);
+            this.btnBackToHome.TabIndex = 9;
+            this.btnBackToHome.Text = "ANASAYFAYA  DÖN";
+            this.btnBackToHome.UseVisualStyleBackColor = false;
             // 
-            // label4
+            // lblTableNo
             // 
-            this.label4.BackColor = System.Drawing.Color.Wheat;
-            this.label4.Font = new System.Drawing.Font("Felix Titling", 96F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label4.Location = new System.Drawing.Point(550, 86);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(257, 192);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "03";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTableNo.BackColor = System.Drawing.Color.Wheat;
+            this.lblTableNo.Font = new System.Drawing.Font("Felix Titling", 96F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTableNo.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblTableNo.Location = new System.Drawing.Point(550, 86);
+            this.lblTableNo.Name = "lblTableNo";
+            this.lblTableNo.Size = new System.Drawing.Size(257, 146);
+            this.lblTableNo.TabIndex = 6;
+            this.lblTableNo.Text = "00";
+            this.lblTableNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -213,34 +223,77 @@ namespace ParaCafe
             this.label7.TabIndex = 13;
             this.label7.Text = "___________________________";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(550, 265);
+            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(168, 16);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "SİPARİŞ TUTARI: ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(538, 230);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(278, 16);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "___________________________";
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblTotalPrice.Location = new System.Drawing.Point(712, 266);
+            this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(75, 16);
+            this.lblTotalPrice.TabIndex = 17;
+            this.lblTotalPrice.Text = "00,00 ₺";
+            // 
+            // cmbProduct
+            // 
+            this.cmbProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProduct.FormattingEnabled = true;
+            this.cmbProduct.Location = new System.Drawing.Point(23, 31);
+            this.cmbProduct.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.cmbProduct.Name = "cmbProduct";
+            this.cmbProduct.Size = new System.Drawing.Size(190, 24);
+            this.cmbProduct.TabIndex = 0;
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 448);
+            this.Controls.Add(this.lblTotalPrice);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.lblTableNo);
+            this.Controls.Add(this.btnBackToHome);
+            this.Controls.Add(this.btnGetPay);
+            this.Controls.Add(this.btnOrderCancel);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.btnMove);
+            this.Controls.Add(this.cmbTableNo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cmbProduct);
+            this.Controls.Add(this.nmuProductQuantity);
+            this.Controls.Add(this.dgwOrderDetails);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "OrderForm";
-            this.Text = "MASA ADI";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.Text = "MASA 0";
+            ((System.ComponentModel.ISupportInitialize)(this.dgwOrderDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmuProductQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,20 +302,23 @@ namespace ParaCafe
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DataGridView dgwOrderDetails;
+        private System.Windows.Forms.NumericUpDown nmuProductQuantity;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cmbTableNo;
+        private System.Windows.Forms.Button btnMove;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnOrderCancel;
+        private System.Windows.Forms.Button btnGetPay;
+        private System.Windows.Forms.Button btnBackToHome;
+        private System.Windows.Forms.Label lblTableNo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.ComboBox cmbProduct;
     }
 }

@@ -29,58 +29,58 @@ namespace ParaCafe
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.ürünlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.geçmişSiparişlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.menuStrip1.SuspendLayout();
+            this.tsmiMenu = new System.Windows.Forms.MenuStrip();
+            this.tsmiProducts = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPastOrders = new System.Windows.Forms.ToolStripMenuItem();
+            this.lstTables = new System.Windows.Forms.ListView();
+            this.tsmiMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // tsmiMenu
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Lucida Console", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ürünlerToolStripMenuItem,
-            this.geçmişSiparişlerToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.tsmiMenu.Font = new System.Drawing.Font("Lucida Console", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tsmiMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiProducts,
+            this.tsmiPastOrders});
+            this.tsmiMenu.Location = new System.Drawing.Point(0, 0);
+            this.tsmiMenu.Name = "tsmiMenu";
+            this.tsmiMenu.Size = new System.Drawing.Size(800, 24);
+            this.tsmiMenu.TabIndex = 0;
+            this.tsmiMenu.Text = "menuStrip1";
             // 
-            // ürünlerToolStripMenuItem
+            // tsmiProducts
             // 
-            this.ürünlerToolStripMenuItem.Name = "ürünlerToolStripMenuItem";
-            this.ürünlerToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.ürünlerToolStripMenuItem.Text = "Ürünler";
+            this.tsmiProducts.Name = "tsmiProducts";
+            this.tsmiProducts.Size = new System.Drawing.Size(82, 20);
+            this.tsmiProducts.Text = "Ürünler";
             // 
-            // geçmişSiparişlerToolStripMenuItem
+            // tsmiPastOrders
             // 
-            this.geçmişSiparişlerToolStripMenuItem.Name = "geçmişSiparişlerToolStripMenuItem";
-            this.geçmişSiparişlerToolStripMenuItem.Size = new System.Drawing.Size(172, 20);
-            this.geçmişSiparişlerToolStripMenuItem.Text = "Geçmiş Siparişler";
+            this.tsmiPastOrders.Name = "tsmiPastOrders";
+            this.tsmiPastOrders.Size = new System.Drawing.Size(172, 20);
+            this.tsmiPastOrders.Text = "Geçmiş Siparişler";
             // 
-            // listView1
+            // lstTables
             // 
-            this.listView1.Location = new System.Drawing.Point(5, 27);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(788, 411);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lstTables.Location = new System.Drawing.Point(5, 27);
+            this.lstTables.Name = "lstTables";
+            this.lstTables.Size = new System.Drawing.Size(788, 411);
+            this.lstTables.TabIndex = 1;
+            this.lstTables.UseCompatibleStateImageBehavior = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.lstTables);
+            this.Controls.Add(this.tsmiMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.tsmiMenu;
             this.Name = "MainForm";
             this.Text = "Para Cafe";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.tsmiMenu.ResumeLayout(false);
+            this.tsmiMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,9 +88,9 @@ namespace ParaCafe
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem ürünlerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem geçmişSiparişlerToolStripMenuItem;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.MenuStrip tsmiMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmiProducts;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPastOrders;
+        private System.Windows.Forms.ListView lstTables;
     }
 }
