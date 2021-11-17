@@ -1,0 +1,5 @@
+C:\Users\user.user\source\repos\ParaCafe\ParaCafe.Data\bin\Debug\ParaCafe.Data.dll
+C:\Users\user.user\source\repos\ParaCafe\ParaCafe.Data\bin\Debug\ParaCafe.Data.pdb
+C:\Users\user.user\source\repos\ParaCafe\ParaCafe.Data\obj\Debug\ParaCafe.Data.csproj.CoreCompileInputs.cache
+C:\Users\user.user\source\repos\ParaCafe\ParaCafe.Data\obj\Debug\ParaCafe.Data.dll
+C:\Users\user.user\source\repos\ParaCafe\ParaCafe.Data\obj\Debug\ParaCafe.Data.pdb

@@ -29,10 +29,13 @@ namespace ParaCafe
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tsmiMenu = new System.Windows.Forms.MenuStrip();
             this.tsmiProducts = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPastOrders = new System.Windows.Forms.ToolStripMenuItem();
             this.lstTables = new System.Windows.Forms.ListView();
+            this.imlTables = new System.Windows.Forms.ImageList(this.components);
             this.tsmiMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,11 +65,22 @@ namespace ParaCafe
             // 
             // lstTables
             // 
-            this.lstTables.Location = new System.Drawing.Point(5, 27);
+            this.lstTables.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstTables.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lstTables.ForeColor = System.Drawing.Color.Gray;
+            this.lstTables.LargeImageList = this.imlTables;
+            this.lstTables.Location = new System.Drawing.Point(0, 24);
             this.lstTables.Name = "lstTables";
-            this.lstTables.Size = new System.Drawing.Size(788, 411);
+            this.lstTables.Size = new System.Drawing.Size(800, 426);
             this.lstTables.TabIndex = 1;
             this.lstTables.UseCompatibleStateImageBehavior = false;
+            // 
+            // imlTables
+            // 
+            this.imlTables.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imlTables.ImageStream")));
+            this.imlTables.TransparentColor = System.Drawing.Color.Transparent;
+            this.imlTables.Images.SetKeyName(0, "bos");
+            this.imlTables.Images.SetKeyName(1, "dolu");
             // 
             // MainForm
             // 
@@ -92,5 +106,6 @@ namespace ParaCafe
         private System.Windows.Forms.ToolStripMenuItem tsmiProducts;
         private System.Windows.Forms.ToolStripMenuItem tsmiPastOrders;
         private System.Windows.Forms.ListView lstTables;
+        private System.Windows.Forms.ImageList imlTables;
     }
 }
