@@ -29,6 +29,7 @@ namespace ParaCafe
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgwOrderDetails = new System.Windows.Forms.DataGridView();
@@ -48,6 +49,10 @@ namespace ParaCafe
             this.label9 = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.cmbProduct = new System.Windows.Forms.ComboBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgwOrderDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmuProductQuantity)).BeginInit();
             this.SuspendLayout();
@@ -71,13 +76,25 @@ namespace ParaCafe
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "EKLE";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dgwOrderDetails
             // 
+            this.dgwOrderDetails.AllowUserToAddRows = false;
+            this.dgwOrderDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgwOrderDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgwOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwOrderDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
             this.dgwOrderDetails.Location = new System.Drawing.Point(20, 73);
             this.dgwOrderDetails.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.dgwOrderDetails.MultiSelect = false;
             this.dgwOrderDetails.Name = "dgwOrderDetails";
+            this.dgwOrderDetails.ReadOnly = true;
+            this.dgwOrderDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwOrderDetails.Size = new System.Drawing.Size(510, 362);
             this.dgwOrderDetails.TabIndex = 5;
             // 
@@ -157,6 +174,7 @@ namespace ParaCafe
             this.btnOrderCancel.TabIndex = 7;
             this.btnOrderCancel.Text = "SİPARİŞ İPTAL";
             this.btnOrderCancel.UseVisualStyleBackColor = false;
+            this.btnOrderCancel.Click += new System.EventHandler(this.btnOrderCancel_Click);
             // 
             // btnGetPay
             // 
@@ -170,6 +188,7 @@ namespace ParaCafe
             this.btnGetPay.TabIndex = 8;
             this.btnGetPay.Text = "ÖDEME AL";
             this.btnGetPay.UseVisualStyleBackColor = false;
+            this.btnGetPay.Click += new System.EventHandler(this.btnGetPay_Click);
             // 
             // btnBackToHome
             // 
@@ -183,6 +202,7 @@ namespace ParaCafe
             this.btnBackToHome.TabIndex = 9;
             this.btnBackToHome.Text = "ANASAYFAYA  DÖN";
             this.btnBackToHome.UseVisualStyleBackColor = false;
+            this.btnBackToHome.Click += new System.EventHandler(this.btnBackToHome_Click);
             // 
             // lblTableNo
             // 
@@ -263,6 +283,36 @@ namespace ParaCafe
             this.cmbProduct.Size = new System.Drawing.Size(190, 24);
             this.cmbProduct.TabIndex = 0;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ProductName";
+            this.Column1.HeaderText = "Product";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "UnitPrice";
+            dataGridViewCellStyle1.Format = "#,###.00₺";
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column2.HeaderText = "Price";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "ProductQuantity";
+            this.Column3.HeaderText = "Quantity";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "TotalPrice";
+            this.Column4.HeaderText = "Total";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 16F);
@@ -320,5 +370,9 @@ namespace ParaCafe
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.ComboBox cmbProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

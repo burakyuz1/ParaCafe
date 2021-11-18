@@ -56,12 +56,14 @@ namespace ParaCafe
             this.tsmiProducts.Name = "tsmiProducts";
             this.tsmiProducts.Size = new System.Drawing.Size(82, 20);
             this.tsmiProducts.Text = "Ürünler";
+            this.tsmiProducts.Click += new System.EventHandler(this.tsmiProducts_Click);
             // 
             // tsmiPastOrders
             // 
             this.tsmiPastOrders.Name = "tsmiPastOrders";
             this.tsmiPastOrders.Size = new System.Drawing.Size(172, 20);
             this.tsmiPastOrders.Text = "Geçmiş Siparişler";
+            this.tsmiPastOrders.Click += new System.EventHandler(this.tsmiPastOrders_Click);
             // 
             // lstTables
             // 
@@ -71,9 +73,10 @@ namespace ParaCafe
             this.lstTables.LargeImageList = this.imlTables;
             this.lstTables.Location = new System.Drawing.Point(0, 24);
             this.lstTables.Name = "lstTables";
-            this.lstTables.Size = new System.Drawing.Size(800, 426);
+            this.lstTables.Size = new System.Drawing.Size(800, 399);
             this.lstTables.TabIndex = 1;
             this.lstTables.UseCompatibleStateImageBehavior = false;
+            this.lstTables.DoubleClick += new System.EventHandler(this.lstTables_DoubleClick);
             // 
             // imlTables
             // 
@@ -86,13 +89,14 @@ namespace ParaCafe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 423);
             this.Controls.Add(this.lstTables);
             this.Controls.Add(this.tsmiMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.tsmiMenu;
             this.Name = "MainForm";
             this.Text = "Para Cafe";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.tsmiMenu.ResumeLayout(false);
             this.tsmiMenu.PerformLayout();
             this.ResumeLayout(false);

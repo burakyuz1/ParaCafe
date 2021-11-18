@@ -1,7 +1,7 @@
 ﻿
 namespace ParaCafe
 {
-    partial class PastOrders
+    partial class PastOrderForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,8 @@ namespace ParaCafe
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.dgvOrderDetails = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -59,19 +59,10 @@ namespace ParaCafe
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvOrderDetails);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Size = new System.Drawing.Size(985, 615);
+            this.splitContainer1.Size = new System.Drawing.Size(815, 615);
             this.splitContainer1.SplitterDistance = 281;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // dgvOrders
-            // 
-            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrders.Location = new System.Drawing.Point(0, 31);
-            this.dgvOrders.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.dgvOrders.Name = "dgvOrders";
-            this.dgvOrders.Size = new System.Drawing.Size(980, 266);
-            this.dgvOrders.TabIndex = 3;
             // 
             // label1
             // 
@@ -83,8 +74,28 @@ namespace ParaCafe
             this.label1.TabIndex = 0;
             this.label1.Text = "SİPARİŞLER";
             // 
+            // dgvOrders
+            // 
+            this.dgvOrders.AllowUserToAddRows = false;
+            this.dgvOrders.AllowUserToDeleteRows = false;
+            this.dgvOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvOrders.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrders.Location = new System.Drawing.Point(0, 31);
+            this.dgvOrders.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.dgvOrders.MultiSelect = false;
+            this.dgvOrders.Name = "dgvOrders";
+            this.dgvOrders.ReadOnly = true;
+            this.dgvOrders.RowHeadersVisible = false;
+            this.dgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOrders.Size = new System.Drawing.Size(980, 266);
+            this.dgvOrders.TabIndex = 3;
+            this.dgvOrders.SelectionChanged += new System.EventHandler(this.dgvOrders_SelectionChanged);
+            // 
             // dgvOrderDetails
             // 
+            this.dgvOrderDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvOrderDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderDetails.Location = new System.Drawing.Point(0, 46);
             this.dgvOrderDetails.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -106,7 +117,7 @@ namespace ParaCafe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 615);
+            this.ClientSize = new System.Drawing.Size(815, 615);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
