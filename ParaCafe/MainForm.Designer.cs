@@ -70,6 +70,7 @@ namespace ParaCafe
             this.lstTables.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstTables.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lstTables.ForeColor = System.Drawing.Color.Gray;
+            this.lstTables.HideSelection = false;
             this.lstTables.LargeImageList = this.imlTables;
             this.lstTables.Location = new System.Drawing.Point(0, 24);
             this.lstTables.Name = "lstTables";

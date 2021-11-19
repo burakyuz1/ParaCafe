@@ -1,19 +1,16 @@
 ﻿using ParaCafe.Data.Concrete;
 using ParaCafe.Data.Enums;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ParaCafe
 {
     public partial class OrderForm : Form
     {
+        public event EventHandler<TableMovedEventArgs> TableMoved;
         private readonly Order order;
         private readonly CafeData db;
         private readonly BindingList<OrderDetail> orderDetails;
@@ -44,8 +41,13 @@ namespace ParaCafe
 
         private void RefreshTableNo()
         {
-            this.Text = $"Table {order.TableNo}";
+            this.Text = $"Masa {order.TableNo} (Açılış Zamani : {order.OpenTime})";
             lblTableNo.Text = order.TableNo.ToString("00");
+            int[] busyTables = db.ActiveOrders.Select(x => x.TableNo).ToArray();
+            cmbTableNo.DataSource = Enumerable
+                .Range(1, db.TableQuantity)
+                .Where(x => !busyTables.Contains(x))
+                .ToList();
         }
 
         private void ShowProducts()
@@ -74,12 +76,12 @@ namespace ParaCafe
 
         private void btnOrderCancel_Click(object sender, EventArgs e)
         {
-            EndTheOrder(OrderStatus.Iptal, 0);
+            EndTheOrder(OrderStatus.Cancel, 0);
         }
 
         private void btnGetPay_Click(object sender, EventArgs e)
         {
-            EndTheOrder(OrderStatus.Odendi, order.GetTotalPrice());
+            EndTheOrder(OrderStatus.Paid, order.GetTotalPrice());
 
         }
 
@@ -91,6 +93,17 @@ namespace ParaCafe
             order.PaidPrice = price;
             db.PastOrders.Add(order);
             Close();
+        }
+
+        private void btnMove_Click(object sender, EventArgs e)
+        {
+            if (cmbTableNo.SelectedIndex == -1) return;
+            int oldTableNo = order.TableNo;
+            int targetTableNo = (int)cmbTableNo.SelectedItem;
+            order.TableNo = targetTableNo;
+            RefreshTableNo();
+            if (TableMoved != null)
+                TableMoved(this, new TableMovedEventArgs(oldTableNo, targetTableNo));
         }
     }
 }

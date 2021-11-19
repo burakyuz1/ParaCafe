@@ -33,6 +33,10 @@ namespace ParaCafe
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgwOrderDetails = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nmuProductQuantity = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbTableNo = new System.Windows.Forms.ComboBox();
@@ -49,10 +53,6 @@ namespace ParaCafe
             this.label9 = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.cmbProduct = new System.Windows.Forms.ComboBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgwOrderDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmuProductQuantity)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +63,7 @@ namespace ParaCafe
             this.label1.Location = new System.Drawing.Point(20, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 16);
+            this.label1.Size = new System.Drawing.Size(87, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ürün Adı";
             // 
@@ -98,6 +98,36 @@ namespace ParaCafe
             this.dgwOrderDetails.Size = new System.Drawing.Size(510, 362);
             this.dgwOrderDetails.TabIndex = 5;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ProductName";
+            this.Column1.HeaderText = "Product";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "UnitPrice";
+            dataGridViewCellStyle1.Format = "#,###.00₺";
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column2.HeaderText = "Price";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "ProductQuantity";
+            this.Column3.HeaderText = "Quantity";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "TotalPrice";
+            this.Column4.HeaderText = "Total";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // nmuProductQuantity
             // 
             this.nmuProductQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -128,7 +158,7 @@ namespace ParaCafe
             this.label2.Location = new System.Drawing.Point(220, 12);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 16);
+            this.label2.Size = new System.Drawing.Size(47, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Adet";
             // 
@@ -151,6 +181,7 @@ namespace ParaCafe
             this.btnMove.TabIndex = 4;
             this.btnMove.Text = "TAŞI";
             this.btnMove.UseVisualStyleBackColor = true;
+            this.btnMove.Click += new System.EventHandler(this.btnMove_Click);
             // 
             // label3
             // 
@@ -158,7 +189,7 @@ namespace ParaCafe
             this.label3.Location = new System.Drawing.Point(583, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 16);
+            this.label3.Size = new System.Drawing.Size(87, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Masa No:";
             // 
@@ -207,7 +238,7 @@ namespace ParaCafe
             // lblTableNo
             // 
             this.lblTableNo.BackColor = System.Drawing.Color.Wheat;
-            this.lblTableNo.Font = new System.Drawing.Font("Felix Titling", 96F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTableNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 96F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTableNo.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblTableNo.Location = new System.Drawing.Point(550, 86);
             this.lblTableNo.Name = "lblTableNo";
@@ -221,7 +252,7 @@ namespace ParaCafe
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(538, 286);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(278, 16);
+            this.label5.Size = new System.Drawing.Size(277, 16);
             this.label5.TabIndex = 13;
             this.label5.Text = "___________________________";
             // 
@@ -230,7 +261,7 @@ namespace ParaCafe
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(538, 420);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(278, 16);
+            this.label6.Size = new System.Drawing.Size(277, 16);
             this.label6.TabIndex = 14;
             this.label6.Text = "___________________________";
             // 
@@ -239,7 +270,7 @@ namespace ParaCafe
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(535, 61);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(278, 16);
+            this.label7.Size = new System.Drawing.Size(277, 16);
             this.label7.TabIndex = 13;
             this.label7.Text = "___________________________";
             // 
@@ -249,7 +280,7 @@ namespace ParaCafe
             this.label8.Location = new System.Drawing.Point(550, 265);
             this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(168, 16);
+            this.label8.Size = new System.Drawing.Size(167, 16);
             this.label8.TabIndex = 15;
             this.label8.Text = "SİPARİŞ TUTARI: ";
             // 
@@ -258,7 +289,7 @@ namespace ParaCafe
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(538, 230);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(278, 16);
+            this.label9.Size = new System.Drawing.Size(277, 16);
             this.label9.TabIndex = 16;
             this.label9.Text = "___________________________";
             // 
@@ -269,7 +300,7 @@ namespace ParaCafe
             this.lblTotalPrice.Location = new System.Drawing.Point(712, 266);
             this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(75, 16);
+            this.lblTotalPrice.Size = new System.Drawing.Size(74, 16);
             this.lblTotalPrice.TabIndex = 17;
             this.lblTotalPrice.Text = "00,00 ₺";
             // 
@@ -282,36 +313,6 @@ namespace ParaCafe
             this.cmbProduct.Name = "cmbProduct";
             this.cmbProduct.Size = new System.Drawing.Size(190, 24);
             this.cmbProduct.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ProductName";
-            this.Column1.HeaderText = "Product";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "UnitPrice";
-            dataGridViewCellStyle1.Format = "#,###.00₺";
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column2.HeaderText = "Price";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "ProductQuantity";
-            this.Column3.HeaderText = "Quantity";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "TotalPrice";
-            this.Column4.HeaderText = "Total";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
             // 
             // OrderForm
             // 

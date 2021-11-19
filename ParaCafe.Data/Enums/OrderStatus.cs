@@ -8,6 +8,6 @@ namespace ParaCafe.Data.Enums
 {
     public enum OrderStatus
     {
-        Aktif, Odendi, Iptal
+        Active, Paid , Cancel
     }
 }

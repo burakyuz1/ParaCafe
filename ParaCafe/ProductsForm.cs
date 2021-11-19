@@ -32,9 +32,6 @@ namespace ParaCafe
                 MessageBox.Show("Veri giriniz.");
                 return;
             } 
-            
-
-            
 
             products.Add(new Product() { ProductName = productName, UnitPrice = nmuUnitPrice.Value });
             txtProductName.Clear();

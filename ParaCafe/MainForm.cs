@@ -14,8 +14,8 @@ namespace ParaCafe
         public MainForm()
         {
             InitializeComponent();
-            CreateTables();
             ReadDatas();
+            CreateTables();
         }
 
         private void InstallSampleProducts()
@@ -26,11 +26,11 @@ namespace ParaCafe
 
         private void CreateTables()
         {
-            for (int i = 0; i <= db.TableQuantity; i++)
+            for (int i = 1; i <= db.TableQuantity; i++)
             {
                 ListViewItem lvi = new ListViewItem($"T - {i}");
                 lvi.Tag = i;
-                lvi.ImageKey = "bos";
+                lvi.ImageKey = db.ActiveOrders.Any(x => x.TableNo == i) ? "dolu" : "bos";
                 lstTables.Items.Add(lvi);
             }
         }
@@ -47,12 +47,22 @@ namespace ParaCafe
                 db.ActiveOrders.Add(order); // olan order'ı activeOrder'ın içine aktar.
                 lvi.ImageKey = "dolu";//Renk değişimi.
             }
-            OrderForm orderForm = new OrderForm(order,db);
+            OrderForm orderForm = new OrderForm(order, db);
+            orderForm.TableMoved += OrderForm_TableMoved;
             orderForm.ShowDialog();
 
 
-            if (order.Status != Data.Enums.OrderStatus.Aktif)
+            if (order.Status != Data.Enums.OrderStatus.Active)
                 lvi.ImageKey = "bos";
+        }
+
+        private void OrderForm_TableMoved(object sender, TableMovedEventArgs e)
+        {
+            foreach (ListViewItem listView in lstTables.Items)
+            {
+                if ((int)listView.Tag == e.OldTable) listView.ImageKey = "bos";
+                if ((int)listView.Tag == e.NewTable) listView.ImageKey = "dolu";
+            }
         }
 
         private void tsmiPastOrders_Click(object sender, EventArgs e)

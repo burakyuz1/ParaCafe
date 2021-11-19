@@ -9,3 +9,9 @@ C:\Users\user.user\Desktop\burakakyuz5\CafeApp\ParaCafe\ParaCafe.Data\obj\Debug\
 C:\Users\user.user\Desktop\burakakyuz5\CafeApp\ParaCafe\ParaCafe.Data\obj\Debug\ParaCafe.Data.csproj.CoreCompileInputs.cache
 C:\Users\user.user\Desktop\burakakyuz5\CafeApp\ParaCafe\ParaCafe.Data\obj\Debug\ParaCafe.Data.dll
 C:\Users\user.user\Desktop\burakakyuz5\CafeApp\ParaCafe\ParaCafe.Data\obj\Debug\ParaCafe.Data.pdb
+C:\Users\BURAKDEV\source\repos\BOOST_Projects\ParaCafe\ParaCafe.Data\bin\Debug\ParaCafe.Data.dll
+C:\Users\BURAKDEV\source\repos\BOOST_Projects\ParaCafe\ParaCafe.Data\bin\Debug\ParaCafe.Data.pdb
+C:\Users\BURAKDEV\source\repos\BOOST_Projects\ParaCafe\ParaCafe.Data\obj\Debug\ParaCafe.Data.csproj.AssemblyReference.cache
+C:\Users\BURAKDEV\source\repos\BOOST_Projects\ParaCafe\ParaCafe.Data\obj\Debug\ParaCafe.Data.csproj.CoreCompileInputs.cache
+C:\Users\BURAKDEV\source\repos\BOOST_Projects\ParaCafe\ParaCafe.Data\obj\Debug\ParaCafe.Data.dll
+C:\Users\BURAKDEV\source\repos\BOOST_Projects\ParaCafe\ParaCafe.Data\obj\Debug\ParaCafe.Data.pdb

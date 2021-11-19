@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "168e6798-dcf9-43f1-a818-d91eeca4f3c5": {
+      "ProjectGuid": "168e6798-dcf9-43f1-a818-d91eeca4f3c5",
+      "DisplayName": "ParaCafe",
+      "ColorIndex": 0
+    },
+    "f4c1c8dc-2721-47cb-acfd-d9656ef3163a": {
+      "ProjectGuid": "f4c1c8dc-2721-47cb-acfd-d9656ef3163a",
+      "DisplayName": "ParaCafe.Data",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
